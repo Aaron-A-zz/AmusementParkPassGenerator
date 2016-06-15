@@ -14,22 +14,29 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let aaron = Guestclassic(firstName: "Aaron", lastName: "Ackerman")
-        print(aaron.passType)
-        print(swipePass(aaron))
+    
+        let classicGuest = Guestclassic(firstName: "Lance", lastName: "A")
+        print(swipePass(classicGuest))
         
+        let vipGuest = GuestVIP(firstName: "Aaron", lastName: "A")
+        print(swipePass(vipGuest))
         
-        let lance = GuestFreeChild(firstName: "Lance", lastName: "Ackerman", dob: "Jul 25 1983")
-        print(" Lance: \(lance.passType)")
-        print(lance.dob.convertToDateTime())
-        let age = lance.dob.convertToDateTime()
-        print(age.age)
-        print(swipePass(lance))
+        let guestFreeChild = GuestFreeChild(firstName: "Mike", lastName: "D", dob: "7/25/2010")
+        print(swipePass(guestFreeChild))
+        print(guestFreeChild.dob.convertToDateTime())
         
+        let foodServicesEmployee = FoodServicesEmployee(firstName: "", lastName: "", streetAddress: "", city: "", state: "", zipCode: 20132, dob: "", ssn: "")
+        print(swipePass(foodServicesEmployee))
         
-        let marieta = Manager(firstName: "", lastName: "", streetAddress: "", city: "", state: "", zipCode: 20132, dob: "", ssn: "", managementTier: .SeniorMgr )
+        let rideServicesEmployee = RideServicesEmployee(firstName: "", lastName: "", streetAddress: "", city: "", state: "", zipCode: 20132, dob: "8/19/2985", ssn: "")
+        print(swipePass(rideServicesEmployee))
         
-        print(swipePass(marieta))
+        let maintenanceEmployee = MaintenanceServicesEmployee(firstName: "", lastName: "", streetAddress: "", city: "", state: "", zipCode: 20144, dob: "1/26/1980", ssn: "")
+        print(swipePass(maintenanceEmployee))
+        
+        let manager = Manager(firstName: "", lastName: "", streetAddress: "", city: "", state: "", zipCode: 20211, dob: "", ssn: "", managementTier: .ShiftMgr)
+        print(swipePass(manager))
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -26,6 +26,14 @@ extension String {
     
 }
 
+extension error: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case ExceededAgeLimit: return "Too old to be a kid"
+        }
+    }
+}
+
 extension NSDate {
     var age: Int {
         let calendar: NSCalendar = NSCalendar.currentCalendar()

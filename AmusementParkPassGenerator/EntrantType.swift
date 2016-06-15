@@ -24,6 +24,10 @@ enum mangementTier {
     case SeniorMgr
 }
 
+enum error: ErrorType {
+    case ExceededAgeLimit
+}
+
 
 extension entrantType {
     
