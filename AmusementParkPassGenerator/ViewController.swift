@@ -16,16 +16,26 @@ class ViewController: UIViewController {
         
         let classicGuest = Guestclassic(firstName: "Wieland", lastName: "Wido", passType: .classicGuest)
         print(swipePass(classicGuest))
+        //let classicGuestError = Guestclassic(firstName: "", lastName: "Wido", passType: .classicGuest)
+        //print(swipePass(classicGuestError))
         
         let vipGuest = GuestVIP(firstName: "Manahem", lastName: "Baruch", passType: .vipGuest)
         print(swipePass(vipGuest))
+        //let vipGuestError = GuestVIP(firstName: "Manahem", lastName: "", passType: .vipGuest)
+        //print(swipePass(vipGuestError))
         
-        let guestFreeChild = GuestFreeChild(firstName: "Samual", lastName: "Iohel", passType: .freeChildGuest, dob: "6/2/1983")
+        let guestFreeChild = GuestFreeChild(firstName: "Samual", lastName: "Iohel", passType: .freeChildGuest, dob: "6/2/2014")
         print(swipePass(guestFreeChild))
-        //print(guestFreeChild.dob!.convertToDateTime().age)
+        
+        //let guestFreeChildError = GuestFreeChild(firstName: "Samual", lastName: "Iohel", passType: .freeChildGuest, dob: "6/2/1970")
+        //print(swipePass(guestFreeChildError))
+        
         
         let foodServicesEmployee = ServicesEmployee(firstName: "Melech", lastName: "Hirah", streetAddress: "123 Street", city: "NY", state: "NY", zipCode: 20132, passType: .foodServicesEmployee, dob: "6/2/2005", ssn: "123-45-6789")
         print(swipePass(foodServicesEmployee))
+        
+        //let foodServicesEmployeeError = ServicesEmployee(firstName: "Melech", lastName: "Hirah", streetAddress: "", city: "NY", state: "NY", zipCode: 20132, passType: .foodServicesEmployee, dob: "6/2/2005", ssn: "123-45-6789")
+        //print(swipePass(foodServicesEmployeeError))
         
         let rideServicesEmployee = ServicesEmployee(firstName: "Felix", lastName: "Thomas", streetAddress: "123 Street", city: "NY", state: "NY", zipCode: 20132, passType: .rideServicesEmployee, dob: "8/4/1985", ssn: "123-45-6789")
         print(swipePass(rideServicesEmployee))
@@ -45,7 +55,7 @@ class ViewController: UIViewController {
          */
         
         do  {
-          try  validatePass(manager)  // <---- replace manger with any entrant type of your choice. :) and remove any properties to test for errors. 
+          try  validatePass(manager)  // <---- replace manger with any entrant type of your choice. :)  for errors uncomment the code above or simple deleted one of the properties. 
             
         } catch error.MissingFirstName {
             print(error.MissingFirstName)
