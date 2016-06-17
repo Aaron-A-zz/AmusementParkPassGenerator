@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 enum entrantType: Equatable {
     case classicGuest
     case vipGuest
@@ -25,10 +26,12 @@ enum mangementTier {
 }
 
 enum error: ErrorType {
-    case ExceededAgeLimit
     case MissingFirstName
     case MissingLastName
+    case ExceededAgeLimit
     case AddressIncomplete
+    case MissingDOB
+    case MissingSSN
 }
 
 
