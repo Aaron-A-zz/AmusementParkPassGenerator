@@ -26,6 +26,9 @@ enum mangementTier {
 
 enum error: ErrorType {
     case ExceededAgeLimit
+    case MissingFirstName
+    case MissingLastName
+    case AddressIncomplete
 }
 
 
@@ -116,5 +119,5 @@ extension entrantType {
 // Swipe Park Pass This can return any property from the ParkPass Class
 func swipePass(parkPass: ParkPass) -> String {
     
-    return " \(parkPass.firstName):\n Area Access: \(parkPass.passType.areaAccess())\n RideAccess: \(parkPass.passType.rideAccess())\n FoodDiscount: \(parkPass.passType.foodDiscount())\n Merchandise Discount: \(parkPass.passType.merchandiseDiscount())"
+    return " \(parkPass.firstName):\n Area Access: \(parkPass.passType.areaAccess())\n RideAccess: \(parkPass.passType.rideAccess())\n FoodDiscount: \(parkPass.passType.foodDiscount())\n Merchandise Discount: \(parkPass.passType.merchandiseDiscount())\n"
 }

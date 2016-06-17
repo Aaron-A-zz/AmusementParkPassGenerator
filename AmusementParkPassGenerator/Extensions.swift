@@ -29,7 +29,10 @@ extension String {
 extension error: CustomStringConvertible {
     var description: String {
         switch self {
-        case ExceededAgeLimit: return "Too old to be a kid"
+        case ExceededAgeLimit: return "to old to be a kid"
+        case MissingFirstName: return "Missing first name"
+        case MissingLastName: return "Missing last name"
+        case AddressIncomplete: return "Address is incomplete"
         }
     }
 }

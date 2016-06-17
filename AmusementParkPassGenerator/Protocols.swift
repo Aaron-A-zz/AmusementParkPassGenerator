@@ -8,25 +8,6 @@
 
 import Foundation
 
-protocol name {
-    var firstName: String { get }
-    var lastName: String { get }
-}
-
-protocol address {
-    var streetAddress: String { get }
-    var city: String { get }
-    var state: String { get }
-    var zipCode: Int { get }
-}
-
-protocol ssn {
-    var ssn: String { get }
-}
-
-protocol dateOfBirth {
-    var dob: String { get }
-}
 
 protocol mgrTier {
     var managementTier: mangementTier { get }
