@@ -18,7 +18,7 @@ struct PersonalInformation {
     var dob = ""
 }
 
-
+//Base Employee Class
 class Employee: ParkPass {
     
     var personalInfo: PersonalInformation

@@ -14,6 +14,7 @@ enum mangementTier {
     case SeniorMgr
 }
 
+//Base Manger Class
 class Manager: ParkPass {
     
     var personalInfo: PersonalInformation

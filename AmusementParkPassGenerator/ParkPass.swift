@@ -29,6 +29,8 @@ enum entrantType: Equatable {
     case manager
 }
 
+
+//Base Class
 class ParkPass {
     
     var type: entrantType
