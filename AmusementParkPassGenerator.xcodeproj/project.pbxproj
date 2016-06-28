@@ -12,10 +12,11 @@
 		93321EF21D0631D6004A8918 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93321EF01D0631D6004A8918 /* Main.storyboard */; };
 		93321EF41D0631D6004A8918 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93321EF31D0631D6004A8918 /* Assets.xcassets */; };
 		93321EF71D0631D6004A8918 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93321EF51D0631D6004A8918 /* LaunchScreen.storyboard */; };
-		93671DC81D0B7FCD009AAD76 /* EntrantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93671DC71D0B7FCD009AAD76 /* EntrantType.swift */; };
-		93671DCA1D0B9711009AAD76 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93671DC91D0B9711009AAD76 /* Protocols.swift */; };
 		93671DCE1D0B9D10009AAD76 /* ParkPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93671DCD1D0B9D10009AAD76 /* ParkPass.swift */; };
-		9381E5E51D0DD8750054CC19 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381E5E41D0DD8750054CC19 /* Extensions.swift */; };
+		93BB3E5C1D20089500C41E9A /* GuestPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB3E5B1D20089500C41E9A /* GuestPass.swift */; };
+		93BB3E5E1D2052FB00C41E9A /* EmployeePass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB3E5D1D2052FB00C41E9A /* EmployeePass.swift */; };
+		93BB3E601D20864100C41E9A /* ManagerPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB3E5F1D20864100C41E9A /* ManagerPass.swift */; };
+		93BB3E621D20902000C41E9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB3E611D20902000C41E9A /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +27,11 @@
 		93321EF31D0631D6004A8918 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93321EF61D0631D6004A8918 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93321EF81D0631D6004A8918 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93671DC71D0B7FCD009AAD76 /* EntrantType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntrantType.swift; sourceTree = "<group>"; };
-		93671DC91D0B9711009AAD76 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		93671DCD1D0B9D10009AAD76 /* ParkPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkPass.swift; sourceTree = "<group>"; };
-		9381E5E41D0DD8750054CC19 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		93BB3E5B1D20089500C41E9A /* GuestPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestPass.swift; sourceTree = "<group>"; };
+		93BB3E5D1D2052FB00C41E9A /* EmployeePass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeePass.swift; sourceTree = "<group>"; };
+		93BB3E5F1D20864100C41E9A /* ManagerPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerPass.swift; sourceTree = "<group>"; };
+		93BB3E611D20902000C41E9A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +66,11 @@
 			children = (
 				93321EEC1D0631D6004A8918 /* AppDelegate.swift */,
 				93321EEE1D0631D6004A8918 /* ViewController.swift */,
-				93671DC71D0B7FCD009AAD76 /* EntrantType.swift */,
-				93671DC91D0B9711009AAD76 /* Protocols.swift */,
-				9381E5E41D0DD8750054CC19 /* Extensions.swift */,
+				93BB3E5B1D20089500C41E9A /* GuestPass.swift */,
+				93BB3E5D1D2052FB00C41E9A /* EmployeePass.swift */,
+				93BB3E5F1D20864100C41E9A /* ManagerPass.swift */,
 				93671DCD1D0B9D10009AAD76 /* ParkPass.swift */,
+				93BB3E611D20902000C41E9A /* Extensions.swift */,
 				93321EF01D0631D6004A8918 /* Main.storyboard */,
 				93321EF31D0631D6004A8918 /* Assets.xcassets */,
 				93321EF51D0631D6004A8918 /* LaunchScreen.storyboard */,
@@ -148,11 +151,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				93671DCE1D0B9D10009AAD76 /* ParkPass.swift in Sources */,
-				9381E5E51D0DD8750054CC19 /* Extensions.swift in Sources */,
 				93321EEF1D0631D6004A8918 /* ViewController.swift in Sources */,
-				93671DC81D0B7FCD009AAD76 /* EntrantType.swift in Sources */,
 				93321EED1D0631D6004A8918 /* AppDelegate.swift in Sources */,
-				93671DCA1D0B9711009AAD76 /* Protocols.swift in Sources */,
+				93BB3E5E1D2052FB00C41E9A /* EmployeePass.swift in Sources */,
+				93BB3E601D20864100C41E9A /* ManagerPass.swift in Sources */,
+				93BB3E5C1D20089500C41E9A /* GuestPass.swift in Sources */,
+				93BB3E621D20902000C41E9A /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

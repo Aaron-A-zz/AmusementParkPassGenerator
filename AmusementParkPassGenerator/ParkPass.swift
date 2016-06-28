@@ -8,73 +8,94 @@
 
 import Foundation
 
+enum error: ErrorType {
+    case missingFirstName
+    case missingLastName
+    case exceededAgeLimit
+    case missingCity
+    case missingState
+    case missingZipCode
+    case missingDOB
+    case missingSSN
+}
 
-// Basic ParkPass
-class ParkPass: passType {
-    var firstName: String
-    var lastName: String
-    var passType: entrantType
-    var streetAddress: String?
-    var city: String?
-    var state: String?
-    var zipCode: Int?
-    var ssn: String?
-    var dob: String?
-    var managementTier: mangementTier?
+enum entrantType: Equatable {
+    case classicGuest
+    case vipGuest
+    case freeChildGuest
+    case foodServicesEmployee
+    case rideServicesEmployee
+    case maintenanceEmployee
+    case manager
+}
+
+class ParkPass {
     
-    init(firstName: String, lastName: String, passType: entrantType) {
-        self.firstName = firstName
-        self.lastName = lastName
-        self.passType = passType
+    var type: entrantType
+    
+    init(type: entrantType) {
+        self.type = type
+    }
+    
+    func swipPass() -> String {
+        
+        return "Access: \(self.areaAccess())\nRide Access: \(self.rideAccess())\nDiscounts: \(self.discountAccess())"
+    }
+    
+    func areaAccess() -> String {
+        switch self.type {
+        case .classicGuest:
+            return "Amusement Areas"
+        case .vipGuest:
+            return "Amusement Areas"
+        case .freeChildGuest:
+            return "Amusement Areas"
+        case .foodServicesEmployee:
+            return "Amusement Areas Kitchen Areas"
+        case .rideServicesEmployee:
+            return "Amusement Areas Ride Control Areas"
+        case .maintenanceEmployee:
+            return "Amusement Areas Kitchen Areas Ride Control Areas Maintenance Areas"
+        case .manager:
+            return "Amusement Areas, Kitchen Areas, Ride Control Areas, Maintenance Areas, Office Areas"
+        }
+    }
+    
+    func rideAccess() -> String {
+        switch self.type {
+        case .classicGuest:
+            return "Access all rides"
+        case .vipGuest:
+            return "Access all rides, Skip all ride lines"
+        case .freeChildGuest:
+            return "Access all rides"
+        case .foodServicesEmployee:
+            return "Access all rides"
+        case .rideServicesEmployee:
+            return "Access all rides"
+        case .maintenanceEmployee:
+            return "Access all rides"
+        case .manager:
+            return "Access all rides"
+        }
+    }
+    
+    func discountAccess() -> String {
+        switch self.type {
+        case .classicGuest:
+            return "None"
+        case .vipGuest:
+            return "10% discount on food, 20% discount on merchandise"
+        case .freeChildGuest:
+            return  "None"
+        case .foodServicesEmployee:
+            return "15% discount on food, 25% discount on merchandise"
+        case .rideServicesEmployee:
+            return "15% discount on food, 25% discount on merchandise"
+        case .maintenanceEmployee:
+            return "15% discount on food, 25% discount on merchandise"
+        case .manager:
+            return "25% discount on food, 25% discount on merchandise"
+        }
     }
 }
-
-//Guest Classic
-class Guestclassic: ParkPass {
-    
-}
-
-//Guest VIP
-class GuestVIP: ParkPass {
-    
-}
-
-//Guest Free Child
-class GuestFreeChild: ParkPass {
-    
-    init(firstName: String, lastName: String, passType: entrantType, dob: String) {
-        super.init(firstName: firstName, lastName: lastName, passType: passType)
-        self.dob = dob
-    }
-}
-
-//Food Services Employee
-class ServicesEmployee: ParkPass {
-    
-    init(firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: Int, passType: entrantType, dob: String, ssn: String) {
-        super.init(firstName: firstName, lastName: lastName, passType: passType)
-        self.streetAddress = streetAddress
-        self.city = city
-        self.state = state
-        self.zipCode = zipCode
-        self.dob = dob
-        self.ssn = ssn
-    }
-}
-
-//Manager 
-class Manager: ParkPass {
-    
-    init(firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: Int, passType: entrantType, dob: String, ssn: String, managementTier: mangementTier) {
-        super.init(firstName: firstName, lastName: lastName, passType: passType)
-        self.streetAddress = streetAddress
-        self.city = city
-        self.state = state
-        self.zipCode = zipCode
-        self.dob = dob
-        self.ssn = ssn
-        self.managementTier = managementTier
-    }
-
-}
-
