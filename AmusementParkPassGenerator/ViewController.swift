@@ -9,11 +9,34 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //Menu buttons
+    @IBOutlet weak var guestButton: UIButton!
+    @IBOutlet weak var employeeButton: UIButton!
+    @IBOutlet weak var managerButton: UIButton!
+    @IBOutlet weak var contractorButton: UIButton!
+    @IBOutlet weak var vendorButton: UIButton!
+    @IBOutlet weak var buttonOne: UIButton!
+    @IBOutlet weak var buttonTwo: UIButton!
+    @IBOutlet weak var buttonThree: UIButton!
+    @IBOutlet weak var buttonFour: UIButton!
+    @IBOutlet weak var buttonFive: UIButton!
+    
+    //Menu Text Fields
+    @IBOutlet weak var dateOfBirth: UITextField!
+    @IBOutlet weak var sSN: UITextField!
+    @IBOutlet weak var projectNumber: UITextField!
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var companyName: UITextField!
+    @IBOutlet weak var streetAddress: UITextField!
+    @IBOutlet weak var city: UITextField!
+    @IBOutlet weak var state: UITextField!
+    @IBOutlet weak var zipCode: UITextField!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         
         //Guest Passes
         let guestClassic = ClassicGuest(type: .classicGuest) //***No validation required at this time***.
@@ -110,6 +133,369 @@ class ViewController: UIViewController {
             print("unknown error")
         }
     }
+    
+    
+    //This is where the magic happens for the buttons
+    @IBAction func mainButtonPressed(sender: AnyObject) {
+        switch sender.tag {
+        
+        case 1:
+            buttonOne.hidden = false
+            buttonTwo.hidden = false
+            buttonThree.hidden = false
+            buttonFour.hidden = false
+            buttonFive.hidden = false
+            buttonOne.setTitle("Child", forState: .Normal)
+            buttonTwo.setTitle("Classic", forState: .Normal)
+            buttonThree.setTitle("Senior", forState: .Normal)
+            buttonFour.setTitle("VIP", forState: .Normal)
+            buttonFive.setTitle("Season Pass", forState: .Normal)
+            
+        case 2:
+            buttonOne.hidden = false
+            buttonTwo.hidden = false
+            buttonThree.hidden = false
+            buttonOne.setTitle("Food Service", forState: .Normal)
+            buttonTwo.setTitle("Ride Service", forState: .Normal)
+            buttonThree.setTitle("Maintenance", forState: .Normal)
+            buttonFour.hidden = true
+            buttonFive.hidden = true
+        
+        case 3:
+            buttonOne.hidden = false
+            buttonTwo.hidden = false
+            buttonThree.hidden = false
+            buttonOne.setTitle("Senior", forState: .Normal)
+            buttonTwo.setTitle("General", forState: .Normal)
+            buttonThree.setTitle("Shift", forState: .Normal)
+            buttonFour.hidden = true
+            buttonFive.hidden = true
+            
+        case 4:
+            buttonOne.hidden = false
+            buttonTwo.hidden = false
+            buttonThree.hidden = false
+            buttonFour.hidden = false
+            buttonFive.hidden = false
+            buttonOne.setTitle("1001", forState: .Normal)
+            buttonTwo.setTitle("1002", forState: .Normal)
+            buttonThree.setTitle("1003", forState: .Normal)
+            buttonFour.setTitle("2001", forState: .Normal)
+            buttonFive.setTitle("2002", forState: .Normal)
+            
+        case 5:
+            buttonOne.hidden = false
+            buttonTwo.hidden = false
+            buttonThree.hidden = false
+            buttonFour.hidden = false
+            buttonOne.setTitle("Acme", forState: .Normal)
+            buttonTwo.setTitle("Orkin", forState: .Normal)
+            buttonThree.setTitle("Fedex", forState: .Normal)
+            buttonFour.setTitle("NW Electrical", forState: .Normal)
+            buttonFive.hidden = true
+        default: break
+            
+        }
+    }
+    
+    
+    @IBAction func secondaryButtonPressed(sender: UIButton) {
+        
+        switch sender.currentTitle! {
+            
+            // Guest Menu
+        case "Child":
+            freeChildGuestSettings()
+        case "Classic":
+            classicGuestSettings()
+        case "Senior":
+            seniorGuestSettings()
+        case "VIP":
+            vipGuestSettings()
+        case "Season Pass":
+            seasonPassSettings()
+            
+            //Employee Menu
+        case "Food Service":
+            employeeSettings()
+        case "Ride Service":
+            employeeSettings()
+        case "Maintenance":
+            employeeSettings()
+            
+            //Manager Menu
+        case "Senior":
+            print("")
+        case "General":
+            print("")
+        case "Shift":
+            print("")
+         
+            //Contractor Menu
+        case "1001":
+            contactEmployeeSettings()
+        case "1002":
+            contactEmployeeSettings()
+        case "1003":
+            contactEmployeeSettings()
+        case "2001":
+            contactEmployeeSettings()
+        case "2002":
+            contactEmployeeSettings()
+            
+            //Vendor
+        case "Acme":
+            print("")
+        case "Orkin":
+            print("")
+        case "Fedex":
+            print("")
+        case "NW Electrical":
+            print("")
+        default: break
+        
+        }
+    }
+    
+    func classicGuestSettings() {
+        
+        dateOfBirth.backgroundColor = UIColor.clearColor()
+        dateOfBirth.enabled = false
+        
+        sSN.backgroundColor = UIColor.clearColor()
+        sSN.enabled = false
+        
+        projectNumber.backgroundColor = UIColor.clearColor()
+        projectNumber.enabled = false
+        
+        firstName.backgroundColor = UIColor.clearColor()
+        firstName.enabled = false
+        
+        lastName.backgroundColor = UIColor.clearColor()
+        lastName.enabled = false
+        
+        companyName.backgroundColor = UIColor.clearColor()
+        companyName.enabled = false
+        
+        streetAddress.backgroundColor = UIColor.clearColor()
+        streetAddress.enabled = false
+        
+        city.backgroundColor = UIColor.clearColor()
+        city.enabled = false
+        
+        state.backgroundColor = UIColor.clearColor()
+        state.enabled = false
+        
+        zipCode.backgroundColor = UIColor.clearColor()
+        zipCode.enabled = false
+        
+    }
+    
+    func vipGuestSettings() {
+        
+        dateOfBirth.backgroundColor = UIColor.clearColor()
+        dateOfBirth.enabled = false
+        
+        sSN.backgroundColor = UIColor.clearColor()
+        sSN.enabled = false
+        
+        projectNumber.backgroundColor = UIColor.clearColor()
+        projectNumber.enabled = false
+        
+        firstName.backgroundColor = UIColor.clearColor()
+        firstName.enabled = false
+        
+        lastName.backgroundColor = UIColor.clearColor()
+        lastName.enabled = false
+        
+        companyName.backgroundColor = UIColor.clearColor()
+        companyName.enabled = false
+        
+        streetAddress.backgroundColor = UIColor.clearColor()
+        streetAddress.enabled = false
+        
+        city.backgroundColor = UIColor.clearColor()
+        city.enabled = false
+        
+        state.backgroundColor = UIColor.clearColor()
+        state.enabled = false
+        
+        zipCode.backgroundColor = UIColor.clearColor()
+        zipCode.enabled = false
+        
+    }
+    
+    func freeChildGuestSettings() {
+        
+        dateOfBirth.backgroundColor = UIColor.whiteColor()
+        dateOfBirth.enabled = true
+        
+        sSN.backgroundColor = UIColor.clearColor()
+        sSN.enabled = false
+        
+        projectNumber.backgroundColor = UIColor.clearColor()
+        projectNumber.enabled = false
+        
+        firstName.backgroundColor = UIColor.clearColor()
+        firstName.enabled = false
+        
+        lastName.backgroundColor = UIColor.clearColor()
+        lastName.enabled = false
+        
+        companyName.backgroundColor = UIColor.clearColor()
+        companyName.enabled = false
+        
+        streetAddress.backgroundColor = UIColor.clearColor()
+        streetAddress.enabled = false
+        
+        city.backgroundColor = UIColor.clearColor()
+        city.enabled = false
+        
+        state.backgroundColor = UIColor.clearColor()
+        state.enabled = false
+        
+        zipCode.backgroundColor = UIColor.clearColor()
+        zipCode.enabled = false
+        
+    }
+    
+    func seniorGuestSettings() {
+        
+        dateOfBirth.backgroundColor = UIColor.whiteColor()
+        dateOfBirth.enabled = true
+        
+        sSN.backgroundColor = UIColor.clearColor()
+        sSN.enabled = false
+        
+        projectNumber.backgroundColor = UIColor.clearColor()
+        projectNumber.enabled = false
+        
+        firstName.backgroundColor = UIColor.whiteColor()
+        firstName.enabled = true
+        
+        lastName.backgroundColor = UIColor.whiteColor()
+        lastName.enabled = true
+        
+        companyName.backgroundColor = UIColor.clearColor()
+        companyName.enabled = false
+        
+        streetAddress.backgroundColor = UIColor.clearColor()
+        streetAddress.enabled = false
+        
+        city.backgroundColor = UIColor.clearColor()
+        city.enabled = false
+        
+        state.backgroundColor = UIColor.clearColor()
+        state.enabled = false
+        
+        zipCode.backgroundColor = UIColor.clearColor()
+        zipCode.enabled = false
+        
+    }
+    
+    func seasonPassSettings() {
+        
+        dateOfBirth.backgroundColor = UIColor.clearColor()
+        dateOfBirth.enabled = false
+        
+        sSN.backgroundColor = UIColor.clearColor()
+        sSN.enabled = false
+        
+        projectNumber.backgroundColor = UIColor.clearColor()
+        projectNumber.enabled = false
+        
+        firstName.backgroundColor = UIColor.whiteColor()
+        firstName.enabled = true
+        
+        lastName.backgroundColor = UIColor.whiteColor()
+        lastName.enabled = true
+        
+        companyName.backgroundColor = UIColor.clearColor()
+        companyName.enabled = false
+        
+        streetAddress.backgroundColor = UIColor.whiteColor()
+        streetAddress.enabled = true
+        
+        city.backgroundColor = UIColor.whiteColor()
+        city.enabled = true
+        
+        state.backgroundColor = UIColor.whiteColor()
+        state.enabled = true
+        
+        zipCode.backgroundColor = UIColor.whiteColor()
+        zipCode.enabled = true
+        
+    }
+    
+    func employeeSettings() {
+        
+        dateOfBirth.backgroundColor = UIColor.whiteColor()
+        dateOfBirth.enabled = true
+        
+        sSN.backgroundColor = UIColor.whiteColor()
+        sSN.enabled = true
+        
+        projectNumber.backgroundColor = UIColor.clearColor()
+        projectNumber.enabled = false
+        
+        firstName.backgroundColor = UIColor.whiteColor()
+        firstName.enabled = true
+        
+        lastName.backgroundColor = UIColor.whiteColor()
+        lastName.enabled = true
+        
+        companyName.backgroundColor = UIColor.clearColor()
+        companyName.enabled = false
+        
+        streetAddress.backgroundColor = UIColor.whiteColor()
+        streetAddress.enabled = true
+        
+        city.backgroundColor = UIColor.whiteColor()
+        city.enabled = true
+        
+        state.backgroundColor = UIColor.whiteColor()
+        state.enabled = true
+        
+        zipCode.backgroundColor = UIColor.whiteColor()
+        zipCode.enabled = true
+    }
+    
+    
+    
+    func contactEmployeeSettings() {
+        
+        dateOfBirth.backgroundColor = UIColor.whiteColor()
+        dateOfBirth.enabled = true
+        
+        sSN.backgroundColor = UIColor.whiteColor()
+        sSN.enabled = true
+        
+        projectNumber.backgroundColor = UIColor.whiteColor()
+        projectNumber.enabled = true
+        
+        firstName.backgroundColor = UIColor.whiteColor()
+        firstName.enabled = true
+        
+        lastName.backgroundColor = UIColor.whiteColor()
+        lastName.enabled = true
+        
+        companyName.backgroundColor = UIColor.whiteColor()
+        companyName.enabled = true
+        
+        streetAddress.backgroundColor = UIColor.whiteColor()
+        streetAddress.enabled = true
+        
+        city.backgroundColor = UIColor.whiteColor()
+        city.enabled = true
+        
+        state.backgroundColor = UIColor.whiteColor()
+        state.enabled = true
+        
+        zipCode.backgroundColor = UIColor.whiteColor()
+        zipCode.enabled = true
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
